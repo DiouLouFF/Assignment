@@ -1,0 +1,51 @@
+
+
+
+import java.io.*;
+
+
+// Class who permits the transmsission of the informations between the client and the server
+
+public class Requests implements Serializable{ 
+	
+	private String comLine;
+	private Interactions samp;
+	
+	static final long serialVersionUID = 1L;
+	//To get the sample
+	public Interactions getSample() 
+	{
+		return this.samp;
+	}
+	
+	
+	//First constructor of the Command class
+	public Requests() 
+	{
+		this.samp = new Interactions(0.0f);
+		
+	}
+	/*Second constructor of the Command class with a parameter:
+	-comLine a string used as a request to the server
+	*/	
+	public Requests(String comLine) 
+	{
+		this();
+		this.comLine = comLine;
+	}
+	
+	//To get the comLine parameter used earlier 
+
+	public String getcomLine() 
+	{
+		return this.comLine; //it returns a string as the request to the server
+	}
+	
+	//To set the comLine (that will be used as a request)
+	public void setcomLine(String comLine)
+	{
+		this.comLine = comLine;
+	}
+
+
+}
